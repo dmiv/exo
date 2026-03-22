@@ -58,7 +58,7 @@ class State(CamelCaseModel):
     node_thunderbolt_bridge: Mapping[NodeId, ThunderboltBridgeStatus] = {}
     node_rdma_ctl: Mapping[NodeId, NodeRdmaCtlStatus] = {}
 
-    # Detected cycles where all nodes have Thunderbolt bridge enabled (>2 nodes)
+    # Detected cycles where all nodes have Thunderbolt bridge enabled (>=3 nodes)
     thunderbolt_bridge_cycles: Sequence[Sequence[NodeId]] = []
 
     @field_serializer("topology", mode="plain")
